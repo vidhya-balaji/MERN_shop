@@ -10,6 +10,8 @@ import {selectLoggedInUser,loginAsync,selectLoginStatus, selectLoginError, clear
 import { toast } from 'react-toastify'
 import {MotionConfig, motion} from 'framer-motion'
 
+import {logo} from '../../../assets'
+
 export const Login = () => {
   const dispatch=useDispatch()
   const status=useSelector(selectLoginStatus)
@@ -72,7 +74,10 @@ export const Login = () => {
               <Stack flexDirection={'row'} justifyContent={'center'} alignItems={'center'}>
 
                 <Stack rowGap={'.4rem'}>
-                  <Typography variant='h2' sx={{wordBreak:"break-word"}} fontWeight={600}>Mern Shop</Typography>
+                  {/* <Typography variant="h6" noWrap component="a" href="/" sx={{ mr: 2, display: { xs: 'none', md: 'flex' },fontWeight: 700, letterSpacing: '.3rem', color: 'inherit', textDecoration: 'none', }}>
+                          <img  src={logo} alt='' height={'64px'} ></img >
+                          </Typography> */}
+                  <Typography variant='h2' sx={{wordBreak:"break-word"}} fontWeight={600}>Bag Luxe</Typography>
                   <Typography alignSelf={'flex-end'} color={'GrayText'} variant='body2'>- Shop Anything</Typography>
                 </Stack>
 

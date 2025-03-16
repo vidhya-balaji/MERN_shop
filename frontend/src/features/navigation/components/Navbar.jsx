@@ -19,6 +19,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import TuneIcon from '@mui/icons-material/Tune';
 import { selectProductIsFilterOpen, toggleFilters } from '../../products/ProductSlice';
 
+import {logo} from '../../../assets'
 
 
 export const Navbar=({isProductList=false})=> {
@@ -56,12 +57,15 @@ export const Navbar=({isProductList=false})=> {
 
   return (
     <AppBar position="sticky" sx={{backgroundColor:"white",boxShadow:"none",color:"text.primary"}}>
-        <Toolbar sx={{p:1,height:"4rem",display:"flex",justifyContent:"space-around"}}>
-
+        <Toolbar sx={{p:1,height:"4rem",display:"flex"}} alignItems={'center'} justifyContent={'space-between'}>
+       
           <Typography variant="h6" noWrap component="a" href="/" sx={{ mr: 2, display: { xs: 'none', md: 'flex' },fontWeight: 700, letterSpacing: '.3rem', color: 'inherit', textDecoration: 'none', }}>
-            MERN SHOP
+          <img  src={logo} alt='' height={'64px'} ></img >
+          <Typography variant="h6" noWrap component="a" href="/" marginRight={'auto'} height={'62px'} alignItems={'center'} sx={{ mr: 2, display: { xs: 'none', md: 'flex' },fontWeight: 700, letterSpacing: '.3rem', color: 'inherit', textDecoration: 'none', }}>
+          Bag Luxe
           </Typography>
-
+          </Typography>
+          
 
 
           <Stack flexDirection={'row'} alignItems={'center'} justifyContent={'center'} columnGap={2}>

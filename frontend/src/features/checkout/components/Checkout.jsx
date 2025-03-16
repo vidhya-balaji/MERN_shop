@@ -32,7 +32,7 @@ export const Checkout = () => {
     const theme=useTheme()
     const is900=useMediaQuery(theme.breakpoints.down(900))
     const is480=useMediaQuery(theme.breakpoints.down(480))
-    
+
     useEffect(()=>{
         if(addressStatus==='fulfilled'){
             reset()
@@ -56,7 +56,23 @@ export const Checkout = () => {
 
     const handleCreateOrder=()=>{
         const order={user:loggedInUser._id,item:cartItems,address:selectedAddress,paymentMode:selectedPaymentMethod,total:orderTotal+SHIPPING+TAXES}
-        dispatch(createOrderAsync(order))
+
+        var options = {
+            key: "rzp_test_XSg0y9uLQ0HCwq",
+            key_secret:"JZimGckKq3Y3mTguuK87JweU",
+            amount: (orderTotal+SHIPPING+TAXES ) * 100, // Amount in paisa (₹10)
+            currency: "INR",
+            name: "Bag Luxe",
+            description: "Order Transaction",
+            handler: function (response) {
+                dispatch(createOrderAsync(order))
+                //return order;
+            }
+        };
+        var rzp = new window.Razorpay(options);
+        rzp.open();
+
+        
     }
 
   return (
