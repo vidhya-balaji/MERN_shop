@@ -27,7 +27,7 @@ mongoose.connect(`mongodb+srv://vidhyabalajinina:vidhyabalaji15@cluster0.ivefj.m
 
 
 // middlewares
-server.use(cors({origin:"http://localhost:3001",credentials:true,exposedHeaders:['X-Total-Count'],methods:['GET','POST','PATCH','DELETE']}))
+server.use(cors({origin:process.env.ORIGIN,credentials:true,exposedHeaders:['X-Total-Count'],methods:['GET','POST','PATCH','DELETE']}))
 
 // server.use(cors({
 //     origin: 'http://localhost:3000/', // Ensure there's no trailing slash
